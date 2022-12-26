@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("Module One"),console.log("Hello, I am webpack watch"),console.log("Module Two")})();
