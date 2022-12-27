@@ -3,6 +3,7 @@ const timer = (deadline) => {
     const timerHours = document.getElementById('timer-hours')
     const timerMinutes = document.getElementById('timer-minutes')
     const timerSeconds = document.getElementById('timer-seconds')
+    let idInterval
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadline).getTime()
