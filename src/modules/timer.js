@@ -37,8 +37,12 @@ const timer = (deadline) => {
         } else {
             clearInterval(idInterval);
         }
+
+        idInterval = setInterval(updateClock, 1000);
     }
-    idInterval = setInterval(updateClock, 1000);
+
+    updateClock()
+
 
 }
 
