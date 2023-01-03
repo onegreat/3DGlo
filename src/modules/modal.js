@@ -2,8 +2,25 @@ const modal = () => {
     const modal = document.querySelector('.popup')
     const buttons = document.querySelectorAll('.popup-btn')
     const closeBtn = modal.querySelector('.popup-close')
+    const modalFormName = document.querySelector('#form3-name')
+    const modalFormPhone = document.querySelector('#form3-phone')
+    const modalFormMail = document.querySelector('#form3-email')
 
-    console.log(closeBtn)
+    console.log(modalFormName)
+    console.log(modalFormPhone)
+    console.log(modalFormMail)
+
+    modalFormName.addEventListener('blur', (e) => {
+        e.target.value = e.target.value.replace(/[^А-Яа-я -]/gi, '').replace(/\ \ +/gi, ' ').replace(/\-\-+/gi, '-').replace(/^\s/g, '').replace(/\s$/g, '').toLowerCase().replace(/([^а-я]|^)([а-я])(?=[а-я]{2})/g, function (_, g1, g2) {
+            return g1 + g2.toUpperCase();
+        });;
+    })
+    modalFormPhone.addEventListener('blur', (e) => {
+        e.target.value = e.target.value.replace(/[^\d()-]/gi, '').replace(/\ \ +/gi, ' ').replace(/\-\-+/gi, '-').replace(/^\s/g, '').replace(/\s$/g, '');
+    })
+    modalFormMail.addEventListener('blur', (e) => {
+        e.target.value = e.target.value.replace(/[^\w@\-_.!~*']/gi, '').replace(/\ \ +/gi, ' ').replace(/\-\-+/gi, '-').replace(/^\s/g, '').replace(/\s$/g, '');
+    })
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -24,7 +41,7 @@ const modal = () => {
         modal.style.display = 'none'
     })
 
-    console.log(modal)
+
 }
 
 export default modal
