@@ -5,6 +5,7 @@ import calculate from './modules/calculate'
 import firstForm from './modules/formconfig'
 import questions from './modules/formconfidTwo'
 import tabs from './modules/tabs'
+import slider from './modules/slider'
 
 timer('15 January 2023')
 menu()
@@ -13,3 +14,4 @@ calculate()
 firstForm()
 questions()
 tabs()
+slider()
