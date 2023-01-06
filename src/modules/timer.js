@@ -17,14 +17,20 @@ const timer = (deadline) => {
         return { timeRemaning, days, hours, minutes, seconds }
     }
 
+    function showTime(days, hours, minutes, seconds) {
+        let timeclock = getTimeRemaining();
+        timerDays.textContent = timeclock.days;
+        timerHours.textContent = timeclock.hours >= 10 ? timeclock.hours : `0${timeclock.hours}`;
+        timerMinutes.textContent = timeclock.minutes >= 10 ? timeclock.minutes : `0${timeclock.minutes}`;
+        timerSeconds.textContent = timeclock.seconds >= 10 ? timeclock.seconds : `0${timeclock.seconds}`;
+        console.log('test')
+    }
+
     const timeTest = () => {
         let timeclock = getTimeRemaining();
 
         if (timeclock.timeRemaning > 0) {
-            timerDays.textContent = timeclock.days;
-            timerHours.textContent = timeclock.hours >= 10 ? timeclock.hours : `0${timeclock.hours}`;
-            timerMinutes.textContent = timeclock.minutes >= 10 ? timeclock.minutes : `0${timeclock.minutes}`;
-            timerSeconds.textContent = timeclock.seconds >= 10 ? timeclock.seconds : `0${timeclock.seconds}`;
+            showTime()
         } else {
             clearInterval(idInterval);
         }
