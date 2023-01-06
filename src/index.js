@@ -4,6 +4,7 @@ import modal from './modules/modal'
 import calculate from './modules/calculate'
 import firstForm from './modules/formconfig'
 import questions from './modules/formconfidTwo'
+import tabs from './modules/tabs'
 
 timer('15 January 2023')
 menu()
@@ -11,3 +12,4 @@ modal()
 calculate()
 firstForm()
 questions()
+tabs()
