@@ -23,18 +23,13 @@ const timer = (deadline) => {
         if (timeclock.timeRemaning > 0) {
             timerDays.textContent = timeclock.days;
             timerHours.textContent = timeclock.hours >= 10 ? timeclock.hours : `0${timeclock.hours}`;
-            console.log(timeclock.hours)
             timerMinutes.textContent = timeclock.minutes >= 10 ? timeclock.minutes : `0${timeclock.minutes}`;
-            console.log(timeclock.minutes)
             timerSeconds.textContent = timeclock.seconds >= 10 ? timeclock.seconds : `0${timeclock.seconds}`;
         }
 
     }
 
     const updateClock = () => {
-
-
-
         // if (getTime.timeRemaning > 0) {
         //     timerDays.textContent = getTime.days;
         //     timerHours.textContent = getTime.hours;
