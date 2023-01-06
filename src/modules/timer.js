@@ -25,6 +25,8 @@ const timer = (deadline) => {
             timerHours.textContent = timeclock.hours >= 10 ? timeclock.hours : `0${timeclock.hours}`;
             timerMinutes.textContent = timeclock.minutes >= 10 ? timeclock.minutes : `0${timeclock.minutes}`;
             timerSeconds.textContent = timeclock.seconds >= 10 ? timeclock.seconds : `0${timeclock.seconds}`;
+        } else {
+            clearInterval(idInterval);
         }
 
     }
