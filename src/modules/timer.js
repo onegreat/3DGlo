@@ -17,27 +17,41 @@ const timer = (deadline) => {
         return { timeRemaning, days, hours, minutes, seconds }
     }
 
+    const timeTest = () => {
+        let timeclock = getTimeRemaining();
 
-    const updateClock = () => {
-        let getTime = getTimeRemaining();
-
-
-        if (getTime.timeRemaning > 0) {
-            timerDays.textContent = getTime.days;
-            timerHours.textContent = getTime.hours;
-            timerMinutes.textContent = getTime.minutes;
-            timerSeconds.textContent = getTime.seconds;
-            if (getTime.hours < 10) {
-                timerHours.textContent = '0' + getTime.hours;
-            } if (getTime.minutes < 10) {
-                timerMinutes.textContent = '0' + getTime.minutes;
-            } if (getTime.seconds < 10) {
-                timerSeconds.textContent = '0' + getTime.seconds;
-            }
-        } else {
-            clearInterval(idInterval);
+        if (timeclock.timeRemaning > 0) {
+            timerDays.textContent = timeclock.days;
+            timerHours.textContent = timeclock.hours >= 10 ? timeclock.hours : `0${timeclock.hours}`;
+            console.log(timeclock.hours)
+            timerMinutes.textContent = timeclock.minutes >= 10 ? timeclock.minutes : `0${timeclock.minutes}`;
+            console.log(timeclock.minutes)
+            timerSeconds.textContent = timeclock.seconds >= 10 ? timeclock.seconds : `0${timeclock.seconds}`;
         }
 
+    }
+
+    const updateClock = () => {
+
+
+
+        // if (getTime.timeRemaning > 0) {
+        //     timerDays.textContent = getTime.days;
+        //     timerHours.textContent = getTime.hours;
+        //     timerMinutes.textContent = getTime.minutes;
+        //     timerSeconds.textContent = getTime.seconds;
+
+        //     if (getTime.hours < 10) {
+        //         timerHours.textContent = '0' + getTime.hours;
+        //     } if (getTime.minutes < 10) {
+        //         timerMinutes.textContent = '0' + getTime.minutes;
+        //     } if (getTime.seconds < 10) {
+        //         timerSeconds.textContent = '0' + getTime.seconds;
+        //     }
+        // } else {
+        //     clearInterval(idInterval);
+        // }
+        timeTest()
         idInterval = setInterval(updateClock, 1000);
     }
 

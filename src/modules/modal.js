@@ -6,10 +6,6 @@ const modal = () => {
     const modalFormPhone = document.querySelector('#form3-phone')
     const modalFormMail = document.querySelector('#form3-email')
 
-    console.log(modalFormName)
-    console.log(modalFormPhone)
-    console.log(modalFormMail)
-
     modalFormName.addEventListener('blur', (e) => {
         e.target.value = e.target.value.replace(/[^А-Яа-я -]/gi, '').replace(/\ \ +/gi, ' ').replace(/\-\-+/gi, '-').replace(/^\s/g, '').replace(/\s$/g, '').toLowerCase().replace(/([^а-я]|^)([а-я])(?=[а-я]{2})/g, function (_, g1, g2) {
             return g1 + g2.toUpperCase();
