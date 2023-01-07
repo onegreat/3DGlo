@@ -1,3 +1,5 @@
+import { animate } from "./helpers"
+
 const modal = () => {
     const modal = document.querySelector('.popup')
     const buttons = document.querySelectorAll('.popup-btn')
@@ -20,12 +22,27 @@ const modal = () => {
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             if (document.documentElement.clientWidth > 768) {
-                modal.style.display = 'block'
-                modal.style.opacity = '0'
-                setTimeout(() => {
-                    modal.style.transition = 'all 1s ease'
-                    modal.style.opacity = '1'
-                }, 100)
+                animate({
+                    duration: 100,
+                    timing(timeFraction) {
+                        return timeFraction;
+                    },
+                    draw(progress) {
+                        modal.style.display = 'block'
+                        modal.style.opacity = '0'
+                        setTimeout(() => {
+                            modal.style.transition = 'all 3s ease'
+                            modal.style.opacity = '1'
+                        })
+                        console.log('test');
+                    }
+                }, 100);
+                // modal.style.display = 'block'
+                // modal.style.opacity = '0'
+                // setTimeout(() => {
+                //     modal.style.transition = 'all 1s ease'
+                //     modal.style.opacity = '1'
+                // }, 100)
             }
             modal.style.display = 'block'
         })
