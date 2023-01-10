@@ -37,12 +37,6 @@ const modal = () => {
                         console.log('test');
                     }
                 }, 100);
-                // modal.style.display = 'block'
-                // modal.style.opacity = '0'
-                // setTimeout(() => {
-                //     modal.style.transition = 'all 1s ease'
-                //     modal.style.opacity = '1'
-                // }, 100)
             }
             modal.style.display = 'block'
         })

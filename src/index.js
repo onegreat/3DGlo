@@ -7,6 +7,7 @@ import questions from './modules/formconfidTwo'
 import tabs from './modules/tabs'
 import slider from './modules/slider'
 import calc from './modules/calc'
+import sendForm from './modules/sendForm'
 
 timer('15 January 2023')
 menu()
@@ -17,3 +18,4 @@ questions()
 tabs()
 slider()
 calc(100)
+sendForm('form1')
