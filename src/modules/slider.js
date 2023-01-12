@@ -16,6 +16,7 @@ const slider = () => {
     }
 
     const dots = document.querySelectorAll('.dot');
+    dots[0].classList.toggle('dot-active')
 
     const prevSlide = (elems, index, strClass) => {
         elems[index].classList.remove(strClass);
@@ -28,6 +29,7 @@ const slider = () => {
     const autoSlide = () => {
         prevSlide(slides, currentSlide, 'portfolio-item-active')
         prevSlide(dots, currentSlide, 'dot-active')
+
         currentSlide++;
 
         if (currentSlide >= slides.length) {

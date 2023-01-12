@@ -36,7 +36,7 @@ const modal = () => {
                         })
                         console.log('test');
                     }
-                }, 100);
+                });
             }
             modal.style.display = 'block'
         })
@@ -46,6 +46,8 @@ const modal = () => {
     modal.addEventListener('click', (e) => {
         if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
             modal.style.display = 'none'
+            modal.style.opacity = '0'
+            console.log('модальное окно закрыто')
         }
     })
 
