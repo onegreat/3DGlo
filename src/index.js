@@ -9,7 +9,7 @@ import slider from './modules/slider'
 import calc from './modules/calc'
 import sendForm from './modules/sendForm'
 
-timer('15 January 2023')
+timer('14 January 2023')
 menu()
 modal()
 calculate()

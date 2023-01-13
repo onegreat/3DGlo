@@ -34,7 +34,6 @@ const modal = () => {
                             modal.style.transition = 'all 3s ease'
                             modal.style.opacity = '1'
                         })
-                        console.log('test');
                     }
                 });
             }
@@ -47,7 +46,6 @@ const modal = () => {
         if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
             modal.style.display = 'none'
             modal.style.opacity = '0'
-            console.log('модальное окно закрыто')
         }
     })
 
